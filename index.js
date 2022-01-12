@@ -34,16 +34,22 @@ const a3 = [147, 258, 359, 123, 456, 789];
 //   `Skaiciu masyvas, kuri sudaro ${a1.length} skaiciai, vidurkis yra ${vidurkis}`
 // );
 
-// function vidurkis(array)
-//     array.forEach((e) => {
-//         suma += e;
-//       });
+function vidurkis(array) {
+  let suma = 0;
+  array.forEach((e) => {
+    suma += e;
+  });
 
-//       const vidurkis = suma / array.length;
+  const vidurkis = suma / array.length;
 
-//       console.log(
-//         `Skaiciu masyvas, kuri sudaro ${array.length} skaiciai, vidurkis yra ${vidurkis}`
-//       )
+  console.log(
+    `Skaiciu masyvas, kuri sudaro ${array.length} skaiciai, vidurkis yra ${vidurkis}`
+  );
+}
+
+vidurkis(a1);
+vidurkis(a2);
+vidurkis(a3);
 
 // Rezultata pateikti tokiu sablonu:
 // Legendines asmenybes [Vardas] [Pavarde] trumpinys yra [V.P.]
@@ -84,23 +90,61 @@ inicialai(s4);
 
 // [Vardas] [Pavarde] yra [amzius] amziaus.
 
-const jonas = {
-  name: "Jonas",
-  surname: "Jonaitis",
-  age: 99,
-};
+const people = [
+  { name: "Jonas", surname: "Jonaitis", age: 99 },
+  { name: "Maryte", surname: "Marytaite", age: 87 },
+  { name: "Onyte", surname: "Oniene", age: 69 },
+];
 
-const maryte = {
-  name: "Maryte",
-  surname: "Marytaite",
-  age: 87,
-};
-
-function prisistatymas(vardas) {
+function introduce(person) {
   console.log(
-    `${vardas.name} ${vardas.surname} yra ${vardas.age} metu amziaus.`
+    `${person.name} ${person.surname} yra ${person.age} metu amziaus.`
   );
 }
 
-prisistatymas(jonas);
-prisistatymas(maryte);
+//for of
+
+for (const person of people) {
+  introduce(person);
+}
+
+//for
+
+for (let i = 0; i < people.length; i++) {
+  const person = people[i];
+  introduce(person);
+}
+
+//while - pirma išsiaiškina, ar reikia daryti, gali būti ir be operacijų
+
+let iw = 0;
+const whileSize = people.length;
+
+while (iw < whileSize) {
+  const person = people[iw];
+  introduce(person);
+  iw++;
+}
+
+//do... while   do while - padarys BENT VIEN1 operaciją
+let idw = 0;
+const dowhileSize = people.length;
+
+do {
+  const person = people[idw];
+  introduce(person);
+  idw++;
+} while (idw < dowhileSize);
+
+//for in - skirtas objektams
+
+for (const i in people) {
+  const person = people[i];
+  introduce(person);
+}
+
+//forEach
+
+people.forEach((person) => {
+  introduce(person);
+});
