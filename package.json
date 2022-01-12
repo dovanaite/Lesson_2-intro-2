@@ -82,7 +82,8 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon"
+    "dev": "nodemon ./index.js",
+    "file": "nodemon ./files.js"
   },
   "keywords": [],
   "author": "Donata <d.dvarionaite@gmail.com>",
