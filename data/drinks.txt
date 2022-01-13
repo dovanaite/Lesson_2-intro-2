@@ -3,5 +3,5 @@ Kava 1.5 15
 Kakava 2. 4
 Sula 7.0 2
 Gira 0.99 11
-Limonadas 1.25 50
+Limonadas 1.25 59
 Sultys 2.22 100
